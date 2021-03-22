@@ -74,6 +74,6 @@ module "node0" {
     args:
       creates: /tmp/migration_attempted_delete_this_to_retry
 ```
-Take a look at the lab.yml Ansible playbook in the root of the repo.  The zypper migration command is run with the argument '--migration 2'.  The argument represents menu item 2 in the migration menu, and will upgrade the system to SP2.  Change the argument to '--migration 1' to upgrade the system to SP3. Depending on the version of SLES you are migrating from, these menu options may be numbered differently, so manually check the menu in 'zypper migration' when in doubt.
+Take a look at the 'lab.yml' Ansible playbook in the root of the repo.  The zypper migration command is run with the argument '--migration 2'.  The argument represents menu item 2 in the migration menu, and will upgrade the system to SP2.  Change the argument to '--migration 1' to upgrade the system to SP3. Depending on the version of SLES you are migrating from, these menu options may be numbered differently, so manually run the 'zypper migration' command and check the menu when in doubt.
 
 ![image info](images/image2.png)
