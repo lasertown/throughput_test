@@ -25,7 +25,7 @@ $ ansible-playbook -i myazure_rm.yml lab.yml
 
 The resources will be created in a resource group specified in the root of the repo's main.tf.
 
-# Deleting the cluster
+# Deleting the environment
 ### The cluster can be deprovisioned by running:
 
 $ terraform delete
