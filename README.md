@@ -4,6 +4,7 @@ The lab.yml Ansible playbook in the root of the repo will utilize Ansible's Terr
 2 nodes will be created.  
 Node0 is the system that SLES SP1 will be upgraded to either SP2 or SP3.  
 Node1 is the rescue VM where the Snapshot of Node0's OS disk will be attached as a data disk.  
+By default, Node0 is imaged with "SUSE:sles-15-sp1:gen2:latest" and will be upgraded to SP2.  
 A chroot environment will be created on the rescue VM and Node0's OS disk will be repaired.  
 Node1 will be deallocated and the fixed OS disk which is attached to Node1 as a data disk will be swapped back to Node0 as an OS disk.  
 Node0 will be started and you can check the serial console or SSH to Node0 to check if it booted successfully.  See Tips section for more SSH information.
