@@ -1,5 +1,7 @@
 ![image info](images/image.png)
 # Overview
+This project was created to test and fix the problem introduced when migrating major SP versions of SLES12 and SLES15 on Azure instance types which support secure boot.  SUSE has published a TID describing the issue:  
+https://www.suse.com/support/kb/doc/?id=000019919  
 The lab.yml Ansible playbook in the root of the repo will utilize Ansible's Terraform module to create the resources in Azure.  
 2 nodes will be created.  
 Node0 is the system that SLES SP1 will be upgraded to either SP2 or SP3.  
@@ -22,16 +24,21 @@ Cloudshell in the Portal times out after 20 minutes, so installing in your local
     1. https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-specific-operating-systems
 
 # Run the playbook
+### Login az CLI:
+```console
+$ az login
+```  
 ### Clone the repository and run this command from root of project folder:
-$ ansible-playbook -i myazure_rm.yml lab.yml
-
+```console
+$ ansible-playbook -i hosts lab.yml
+```  
 The resources will be created in a resource group specified in the root of the repo's main.tf.
 
 # Deleting the environment
 ### The cluster can be deprovisioned by running:
-
+```console
 $ terraform delete
-
+```  
 You can also simply delete the resource group the cluster is in.  If you manually delete the resource group, terraform will leave behind the files:
 1. terraform.tfstate
 1. terraform.tfstate.backup
