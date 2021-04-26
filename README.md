@@ -83,4 +83,33 @@ module "node0" {
 ```
 Take a look at the 'lab.yml' Ansible playbook in the root of the repo.  The zypper migration command is run with the argument '--migration 2'.  The argument represents menu item 2 in the migration menu, and will upgrade the system to SP2.  Change the argument to '--migration 1' to upgrade the system to SP3. Depending on the version of SLES you are migrating from, these menu options may be numbered differently, so manually run the 'zypper migration' command and check the menu when in doubt.
 
-![image info](images/image2.png)
+```console
+Available migrations:
+
+    1 | SUSE Linux Enterprise Server 15 SP3 x86_64
+        Basesystem Module 15 SP3 x86_64
+        Containers Module 15 SP3 x86_64
+        Desktop Applications Module 15 SP3 x86_64
+        Python 2 Module 15 SP3 x86_64
+        Server Applications Module 15 SP3 x86_64
+        SUSE Cloud Application Platform Tools Module 15 SP3 x86_64
+        Development Tools Module 15 SP3 x86_64
+        Legacy Module 15 SP3 x86_64
+        Public Cloud Module 15 SP3 x86_64
+        Web and Scripting Module 15 SP3 x86_64
+
+    2 | SUSE Linux Enterprise Server 15 SP2 x86_64
+        Basesystem Module 15 SP2 x86_64
+        Containers Module 15 SP2 x86_64
+        Desktop Applications Module 15 SP2 x86_64
+        Python 2 Module 15 SP2 x86_64
+        Server Applications Module 15 SP2 x86_64
+        SUSE Cloud Application Platform Tools Module 15 SP2 x86_64
+        Development Tools Module 15 SP2 x86_64
+        Legacy Module 15 SP2 x86_64
+        Public Cloud Module 15 SP2 x86_64
+        Web and Scripting Module 15 SP2 x86_64
+
+
+[num/q]:
+```
