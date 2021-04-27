@@ -30,7 +30,7 @@ $ az login
 ```  
 ### Clone the repository and run this command from root of project folder:
 ```console
-$ ansible-playbook -i hosts lab.yml
+$ ansible-playbook -i myazure_rm.yml lab.yml
 ```  
 The resources will be created in a resource group specified in the root of the repo's main.tf.
 
