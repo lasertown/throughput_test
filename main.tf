@@ -31,25 +31,10 @@ module "node0" {
   subnet = module.network0.subnet
   NSGid = module.NSG0.NSGid
   console = module.storage_account0.console
-  size = "Standard_B2ms"
+  size = "Standard_E80ids_v4"
   publisher = "SUSE"
   offer = "sles-sap-15-sp1"
   sku = "gen2"
   _version = "latest"
   tag = "node0"
-}
-
-module "node1" {
-  source = "./modules/node"
-  rg = module.rg0.rg
-  region = module.network0.region
-  subnet = module.network0.subnet
-  NSGid = module.NSG0.NSGid
-  console = module.storage_account0.console
-  size = "Standard_B2ms"
-  publisher = "SUSE"
-  offer = "sles-sap-15-sp1"
-  sku = "gen2"
-  _version = "latest"
-  tag = "node1"
 }
