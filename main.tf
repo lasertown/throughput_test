@@ -1,6 +1,6 @@
 module "rg0" {
   source = "./modules/resource_group"
-  rg = "sles_upgrade_swap"
+  rg = "throughput_test"
 }
   
 module "network0" {
