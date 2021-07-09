@@ -153,18 +153,3 @@ resource "azurerm_virtual_machine_data_disk_attachment" "disk9" {
   lun                = "9"
   caching            = var.caching
 }
-
-resource "azurerm_managed_disk" "disk10" {
-  name                 = "disk10"
-  location             = var.region
-  resource_group_name  = var.rg
-  storage_account_type = var.disk_type
-  create_option        = "Empty"
-  disk_size_gb         = var.sizeGB
-}
-resource "azurerm_virtual_machine_data_disk_attachment" "disk10" {
-  managed_disk_id    = azurerm_managed_disk.disk10.id
-  virtual_machine_id = var.vmID
-  lun                = "10"
-  caching            = var.caching
-}
