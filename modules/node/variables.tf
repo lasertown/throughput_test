@@ -21,16 +21,20 @@ variable "NSGid" {
 variable "console" {
   description = "The address of the storage account for the serial console" 
 }
-
+################################
+# publisher = "SUSE"
+# offer     = "sles-sap-15-sp2"
+# sku       = "gen2"
+# _version   = "latest"
 ################################
 # publisher = "SUSE"
 # offer     = "sles-sap-12-sp5"
 # sku       = "gen2"
 # _version   = "latest"
 ################################
-# publisher = "SUSE"
-# offer     = "SLES-SAP"
-# sku       = "12-sp4-gen2"
+# publisher = "Canonical"
+# offer     = "UbuntuServer"
+# sku       = "18.04-LTS"
 # _version   = "latest"
 ################################
 variable "publisher" {
