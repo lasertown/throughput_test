@@ -1,4 +1,8 @@
   
+provider "azurerm" {
+  features {}
+}
+
 resource "azurerm_managed_disk" "disk0" {
   name                 = "disk0"
   location             = var.region
