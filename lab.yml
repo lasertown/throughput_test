@@ -44,6 +44,12 @@
       state: latest
     environment:
       ZYPP_LOCK_TIMEOUT: 120
+  - name: Install fio 
+    zypper:
+      name: fio
+      state: present
+    environment:
+      ZYPP_LOCK_TIMEOUT: 120
   - name: Copy bellwether script to node
     copy:
       src: scripts/bellwether.fio
