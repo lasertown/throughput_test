@@ -49,4 +49,3 @@
   copy:
     src: scripts/bellwether.fio
     dest: ~/
-      dest: ~/.ssh/config
