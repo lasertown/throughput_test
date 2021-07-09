@@ -42,6 +42,7 @@ module "node0" {
 module "data_disk_group0" {
   source = "./modules/data_disk_group"
   rg = module.rg0.rg
+  region = module.network0.region
   disk_type = "Premium_LRS"
   sizeGB = 1000
   vmID = module.node0.id
