@@ -3,5 +3,5 @@ output "public_ip" {
 }
 
 output "id" {
-  value = azurerm_linux_virtual_machine.id
+  value = azurerm_linux_virtual_machine.node.id
 }
