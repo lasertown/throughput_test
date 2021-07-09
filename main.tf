@@ -32,7 +32,7 @@ module "node0" {
   NSGid = module.NSG0.NSGid
   console = module.storage_account0.console
   size = "Standard_E80ids_v4"
-  publisher = "SUSE"
+  publisher = "SUSE"    
   offer = "sles-sap-15-sp1"
   sku = "gen2"
   _version = "latest"
@@ -46,3 +46,4 @@ module "data_disk_group0" {
   sizeGB = 1000
   vmID = module.node0.id
   caching = "None"
+}
