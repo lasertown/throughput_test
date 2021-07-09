@@ -53,4 +53,7 @@
   - name: Copy bellwether script to node
     copy:
       src: scripts/bellwether.fio
-      dest: ~/bellwether.fio
+      dest: /home/azadmin/bellwether.fio
+      mode: '0600'
+      owner: azadmin
+      group: users
