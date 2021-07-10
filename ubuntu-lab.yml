@@ -64,3 +64,7 @@
   command: fio /home/azadmin/bellwether.fio
   async: 18000
   poll: 300
+
+- name: Pause
+  pause:
+    minutes: 5
