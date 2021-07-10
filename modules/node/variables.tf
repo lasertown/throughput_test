@@ -37,6 +37,11 @@ variable "console" {
 # sku       = "18.04-LTS"
 # _version   = "latest"
 ################################
+# publisher = "Canonical"
+# offer     = "UbuntuServer"
+# sku       = "16_04-lts-gen2"
+# _version   = "latest"
+################################
 variable "publisher" {
   description = "Publisher of the image used to create VM"
 }
