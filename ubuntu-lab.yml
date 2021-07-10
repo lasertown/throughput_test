@@ -54,3 +54,13 @@
       mode: '0600'
       owner: azadmin
       group: users
+
+- name: Reboot in case apt update installs new kernel
+  reboot:
+    reboot_timeout: 300
+    
+- name: Run bellwether.fio
+  become: yes
+  command: fio /home/azadmin/bellwether.fio
+  async: 18000
+  poll: 300
