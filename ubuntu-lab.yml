@@ -68,3 +68,10 @@
 - name: Pause
   pause:
     minutes: 5
+
+- name: Deallocate VM
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Terraform refresh
+      shell: az vm deallocate -g `terreaform output rg` -n 
