@@ -74,4 +74,5 @@
   connection: local
   tasks:
     - name: Terraform refresh
-      shell: az vm deallocate -g `terreaform output rg` -n 
+      shell: az vm deallocate -g `terreaform output rg` -n `terraform output node_name`
+      
