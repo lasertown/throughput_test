@@ -57,3 +57,22 @@
       mode: '0600'
       owner: azadmin
       group: users
+
+- name: Run bellwether.fio
+  become: yes
+  hosts: all
+  tasks:
+  - name: Run fio command
+    command: fio /home/azadmin/bellwether.fio
+    async: 18000
+    poll: 300
+  - name: Pause
+    pause:
+      minutes: 5
+
+- name: Deallocate VM
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Deallocate azcli command
+    shell: az vm deallocate -g `terraform output rg` -n `terraform output node_name`
