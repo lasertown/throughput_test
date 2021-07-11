@@ -74,6 +74,6 @@
   hosts: localhost
   connection: local
   tasks:
-  - name: Terraform refresh
+  - name: Deallocate azcli command
     shell: az vm deallocate -g `terraform output rg` -n `terraform output node_name`
     
