@@ -75,4 +75,4 @@
   connection: local
   tasks:
   - name: Deallocate azcli command
-    shell: az vm deallocate -g `terraform output rg` -n `terraform output node_name`
+    shell: az vm deallocate -g `terraform output -raw rg` -n `terraform output -raw node_name`
