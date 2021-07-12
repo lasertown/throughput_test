@@ -105,3 +105,22 @@ Here are some examples found in /modules/node/variable.tf:
 # _version   = "latest"
 ################################
 ```
+
+### Running multiple versions of this test in parallel
+You can clone multiple instances of this project to create multiple VMs for testing. In addition to changing the resource group name, you would have to change the name of the Azure VM resource, which can be done by changing the tag name:
+```console
+module "node0" {
+  source = "./modules/node"
+  rg = module.rg0.rg
+  region = module.network0.region
+  subnet = module.network0.subnet
+  NSGid = module.NSG0.NSGid
+  console = module.storage_account0.console
+  size = "Standard_E80ids_v4"
+  publisher = "SUSE"    
+  offer = "sles-sap-15-sp2"
+  sku = "gen2"
+  _version = "latest"
+  tag = "node0"            #<-----------------THIS LINE TO CHANGE TAG NAME
+}
+```
