@@ -50,7 +50,7 @@ module "data_disk_group0" {
 }
 
 module "dashboard0" {
-  source = ".modules/dashboard"
+  source = "./modules/dashboard"
   rg = module.rg0.rg
   region = module.network0.region
   node_name = module.node0.node_name
