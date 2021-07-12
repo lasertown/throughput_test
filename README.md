@@ -1,20 +1,13 @@
 ![image info](images/image.png)
 # Overview
-This project was created to test and fix the problem introduced when migrating major SP versions of SLES12 and SLES15 on Azure instance types which support secure boot.  SUSE has published a TID describing the issue:  
-https://www.suse.com/support/kb/doc/?id=000019919  
+This project was created to test IO throughput on the E80ids_v4 instance type.  10 P30 Premium SSD disks will be attached as data disks and a Fio script will be run on the 10 disks.  
 The lab.yml Ansible playbook in the root of the repo will utilize Ansible's Terraform module to create the resources in Azure.  
-2 nodes will be created.  
-Node0 is the system that SLES SP1 will be upgraded to either SP2 or SP3.  
-Node1 is the rescue VM where the Snapshot of Node0's OS disk will be attached as a data disk.  
-By default, Node0 is imaged with "SUSE:sles-15-sp1:gen2:latest" and will be upgraded to SP2.  
-A chroot environment will be created on the rescue VM and Node0's OS disk will be repaired.  
-Node1 will be deallocated and the fixed OS disk which is attached to Node1 as a data disk will be swapped back to Node0 as an OS disk.  
-Node0 will be started and you can check the serial console or SSH to Node0 to check if it booted successfully.  See Tips section for more SSH information.
+All resources will be created in a single resource group. 
+By default, Node0 is imaged with URN "SUSE:sles-15-sp2:gen2:latest".  
+The bellwether script in the scripts directory will be run with Fio.  
+The console is enabled on the VM.  See Tips section for more SSH information.
 # Installation
-## Requires the latest Terraform and Ansible
-Azure Cloudshell has both Terraform and Ansible preinstalled, so cloning and launching from Cloudshell is convienent.
 ## Installation in your local Linux environment 
-Cloudshell in the Portal times out after 20 minutes, so installing in your local environment or Linux VM is a good option.  If you use Cloudshell, you will have to hit the keyboard every now and then to prevent a timeout.
 ### Links to install requirements
 - az CLI
     1. https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
@@ -26,13 +19,19 @@ Cloudshell in the Portal times out after 20 minutes, so installing in your local
 # Run the playbook
 ### Login az CLI:
 ```console
-$ az login
+az login
 ```  
 ### Clone the repository and run this command from root of project folder:
 ```console
-$ ansible-playbook -i myazure_rm.yml lab.yml
+ansible-playbook -i myazure_rm.yml lab.yml
 ```  
-The resources will be created in a resource group specified in the root of the repo's main.tf.
+The resources will be created in a resource group specified in the root of the repo's main.tf.  
+```console
+module "rg0" {
+  source = "./modules/resource_group"
+  rg = "throughput_test"    #<-----------------THIS LINE TO CHANGE RESOURCE GROUP NAME
+}
+```
 
 # Deleting the environment
 ### The cluster can be deprovisioned by running:
