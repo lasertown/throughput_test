@@ -9,7 +9,9 @@ All resources will be created in a single resource group.
 By default, Node0 is imaged with URN "SUSE:sles-15-sp2:gen2:latest".    
 
 The bellwether.fio script in the scripts directory will be run with Fio.
-The Fio test will automatically kick off when the VM boots up. The VM will automatically deallocate when the test is complete.  
+The Fio test will automatically kick off when the VM boots up. The VM will automatically deallocate when the test is complete.
+
+**The test will take approximately 4 hours.**
 
 A dashboard will be created containing a graph configured with the read metrics for all the disks.  
 
