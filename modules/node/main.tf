@@ -74,7 +74,7 @@ resource "azurerm_linux_virtual_machine" "node" {
 data "azurerm_subscription" "current" {}
 
 resource "azurerm_dashboard" "dashboard" {
-  name                = "Throughput"
+  name                = "Throughput-${var.tag}"
   resource_group_name = var.rg
   location            = var.region
   dashboard_properties = <<DASH
