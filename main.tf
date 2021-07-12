@@ -33,7 +33,7 @@ module "node0" {
   console = module.storage_account0.console
   size = "Standard_E80ids_v4"
   publisher = "SUSE"    
-  offer = "sles-sap-15-sp1"
+  offer = "sles-sap-15-sp2"
   sku = "gen2"
   _version = "latest"
   tag = "node0"
