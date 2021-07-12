@@ -96,7 +96,7 @@ Here are some examples found in /modules/node/variable.tf:
 ################################
 # publisher = "Canonical"
 # offer     = "UbuntuServer"
-# sku       = "18.04-LTS"
+# sku       = "18_04-lts-gen2"
 # _version   = "latest"
 ################################
 # publisher = "Canonical"
