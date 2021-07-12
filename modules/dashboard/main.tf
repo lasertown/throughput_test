@@ -6,6 +6,7 @@ data "azurerm_subscription" "current" {}
 
 variable "subid" {
   default = data.azurerm_subscription.current.subscription_id
+}
 
 resource "azurerm_dashboard" "dashboard" {
   name                = "throughput_lab"
