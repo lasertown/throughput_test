@@ -19,7 +19,7 @@
                       "metrics": [
                         {
                           "resourceMetadata": {
-                            "id": "/subscriptions/${data.azurerm_subscription.current.subscription_id}/resourceGroups/${var.resource_group}/providers/Microsoft.Compute/virtualMachines/${var.node_name}"
+                            "id": "/subscriptions/${var.sub_id}/resourceGroups/${var.resource_group}/providers/Microsoft.Compute/virtualMachines/${var.node_name}"
                           },
                           "name": "Data Disk Read Bytes/sec",
                           "aggregationType": 4,
