@@ -61,7 +61,7 @@ module "rg0" {
   rg = "throughput_test"    #<-----------------THIS LINE TO CHANGE RESOURCE GROUP NAME
 }
 ```
-### Chaning the region
+### Changing the region
 ```console
 module "network0" {
   source = "./modules/network"
