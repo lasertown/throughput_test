@@ -143,3 +143,4 @@ module "node0" {
   tag = "node0"            #<-----------------THIS LINE TO CHANGE TAG NAME
 }
 ```
+Of course if you are familiar with Terraform and Ansible, you may simply expand both the main.tf and playbooks.  This instance size is particularly large so this project focuses on just using 1 at a time.
