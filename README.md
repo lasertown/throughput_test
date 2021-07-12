@@ -71,7 +71,9 @@ You can also simply delete the resource group the cluster is in.  If you manuall
 1. terraform.tfstate
 1. terraform.tfstate.backup
 
-Delete the tfstate files and you ready to spin up another cluster.  If you do not want to wait for the previous resource group to be deleted, you can create a new resource group name in main.tf, and the new resources will be spun up in the new resource group.
+Delete the tfstate files and you ready to spin up another cluster.  
+
+If you do not want to wait for the previous resource group to be deleted, you can create a new resource group name in main.tf, and the new resources will be spun up in the new resource group.
 
 # Tips
 
