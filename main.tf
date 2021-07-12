@@ -48,10 +48,3 @@ module "data_disk_group0" {
   vmID = module.node0.id
   caching = "None"
 }
-
-module "dashboard0" {
-  source = "./modules/dashboard"
-  rg = module.rg0.rg
-  region = module.network0.region
-  node_name = module.node0.node_name
-}
