@@ -120,7 +120,7 @@ Here are some examples found in /modules/node/variable.tf:
 
 ### Dashboard
 ![image info](images/image2.png)
-A dashboard will be created containing a graph of the read IO metrics of all the disks.  The dashboard will be named **Throughput-\<nodename\>**.  It will be created as a shared dashboard, but it can be easily manually changed to private.  The dashboard will not automatically delete itself when the project resource group is deleted if it is set to private.  You must manually delete the dashboard.
+A dashboard will be created containing a graph of the read IO metrics of all the disks.  The dashboard will be named **Throughput-\<nodename\>**.  It will be created as a shared dashboard, but it can be easily manually changed to private.  The dashboard will not automatically delete itself when the project resource group is deleted if it is set to private.  You must manually delete the dashboard if you set it to private.
 
 
 ### Running multiple versions of this test in parallel
