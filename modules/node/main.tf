@@ -99,7 +99,7 @@ resource "azurerm_dashboard" "dashboard" {
                       "metrics": [
                         {
                           "resourceMetadata": {
-                            "id": "/subscriptions/${data.azurerm_subscription.current.subscription_id}/resourceGroups/${var.rg}/providers/Microsoft.Compute/virtualMachines/${var.node_name}"
+                            "id": "/subscriptions/${data.azurerm_subscription.current.subscription_id}/resourceGroups/${var.rg}/providers/Microsoft.Compute/virtualMachines/${var.tag}"
                           },
                           "name": "Data Disk Read Bytes/sec",
                           "aggregationType": 4,
