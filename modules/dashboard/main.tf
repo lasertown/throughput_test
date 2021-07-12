@@ -10,6 +10,7 @@ resource "azurerm_dashboard" "dashboard" {
   location            = var.region
   dashboard_properties = templatefile("dash_template/dash.tpl",
     {
+      sub_id         = azurerm_subscription.current.subscription_id
       resource_group = var.rg,
       node           = var.node_name
   })
