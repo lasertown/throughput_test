@@ -10,3 +10,7 @@ variable "region" {
 variable "node_name" {
   description = "Name of the VM"
 }
+
+variable "subid" {
+  default = data.azurerm_subscription.current.subscription_id
+}
