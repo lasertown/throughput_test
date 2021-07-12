@@ -61,6 +61,16 @@ module "rg0" {
   rg = "throughput_test"    #<-----------------THIS LINE TO CHANGE RESOURCE GROUP NAME
 }
 ```
+### Chaning the region
+```console
+module "network0" {
+  source = "./modules/network"
+  rg = module.rg0.rg 
+  region = "westus2"        #<-----------------THIS LINE TO CHANGE REGION
+  address_space = [ "10.0.0.0/16" ]
+  address_prefixes = [ "10.0.0.0/24" ]
+}
+```
 
 # Deleting the environment
 ### The cluster can be deprovisioned by running:
