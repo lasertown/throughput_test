@@ -79,3 +79,29 @@ If you do not want to wait for the previous resource group to be deleted, you ca
 
 ### SSH Keys
 If you do not already have SSH keys setup in your home directory, they will be created for you.  The public keys will be installed on both the nodes.  The username you should login with is 'azadmin'.  If you already have SSH keys setup, you can login with your existing keys with the 'azadmin' user, as your existing keys will be distributed to both nodes.
+
+### OS Images
+Here are some examples found in /modules/node/variable.tf:
+```console
+################################
+# publisher = "SUSE"
+# offer     = "sles-sap-15-sp2"
+# sku       = "gen2"
+# _version   = "latest"
+################################
+# publisher = "SUSE"
+# offer     = "sles-sap-12-sp5"
+# sku       = "gen2"
+# _version   = "latest"
+################################
+# publisher = "Canonical"
+# offer     = "UbuntuServer"
+# sku       = "18.04-LTS"
+# _version   = "latest"
+################################
+# publisher = "Canonical"
+# offer     = "UbuntuServer"
+# sku       = "16_04-lts-gen2"
+# _version   = "latest"
+################################
+```
