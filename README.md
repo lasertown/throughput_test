@@ -6,10 +6,12 @@ The sles_lab.yml or ubuntu_lab.yml Ansible playbooks in the root of the repo wil
 
 All resources will be created in a single resource group.  
 
-By default, Node0 is imaged with URN "SUSE:sles-15-sp2:gen2:latest".  
+By default, Node0 is imaged with URN "SUSE:sles-15-sp2:gen2:latest".    
 
 The bellwether.fio script in the scripts directory will be run with Fio.
-The Fio test will automatically kick off when the instance boots up. The VM will automatically deallocate when the test is complete.  
+The Fio test will automatically kick off when the VM boots up. The VM will automatically deallocate when the test is complete.  
+
+A dashboard will be created containing a graph configured with the read metrics for all the disks.  
 
 The console is enabled on the VM.  See Tips section for more SSH information.
 # Installation
@@ -115,6 +117,11 @@ Here are some examples found in /modules/node/variable.tf:
 # _version   = "latest"
 ################################
 ```
+
+### Dashboard
+![image info](images/image2.png)
+A dashboard will be created containing a graph of the read IO metrics of all the disks.  The dashboard will be named **Throughput-\<nodename\>**.  It will be created as a shared dashboard, but it can be easily manually changed to private.  The dashboard will not automatically delete itself when the project resource group is deleted if it is set to private.  You must manually delete the dashboard.
+
 
 ### Running multiple versions of this test in parallel
 You can clone multiple instances of this project to create multiple VMs for testing. In addition to changing the resource group name, you would have to change the name of the Azure VM resource, which can be done by changing the tag name:
