@@ -59,7 +59,7 @@
   become: yes
   hosts: all
   tasks:
-  - name: Run fio command
+  - name: Run fio command (Actual IO test which takes hours)
     command: fio /home/azadmin/bellwether.fio
     async: 18000
     poll: 300
