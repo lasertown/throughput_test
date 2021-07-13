@@ -40,6 +40,13 @@ ansible-playbook -i myazure_rm.yml sles_lab.yml
 ```console
 ansible-playbook -i myazure_rm.yml ubuntu_lab.yml
 ```  
+```console
+ansible-playbook -i myazure_rm.yml sles_lab.yml
+```  
+### If you are running an RHEL image:
+```console
+ansible-playbook -i myazure_rm.yml rhel_lab.yml
+```
 ### Changing the instance size or image
 The main.tf in the root of the repo calls the node module to create the nodes
 ```hcl
@@ -121,6 +128,11 @@ Here are some examples found in /modules/node/variable.tf:
 # publisher = "RedHat"
 # offer = "rhel-raw"
 # sku = "8-raw-gen2"
+# _version = "latest"
+################################
+# publisher = "RedHat"
+# offer = "rhel-raw"
+# sku = "7-raw-gen2"
 # _version = "latest"
 ################################
 ```
