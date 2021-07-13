@@ -118,6 +118,11 @@ Here are some examples found in /modules/node/variable.tf:
 # sku       = "16_04-lts-gen2"
 # _version   = "latest"
 ################################
+# publisher = "RedHat"
+# offer = "rhel-raw"
+# sku = "8-raw-gen2"
+# _version = "latest"
+################################
 ```
 
 ### Dashboard
