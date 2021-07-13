@@ -43,7 +43,7 @@
       name: '*'
       state: latest
   - name: Install fio 
-    apt:
+    yum:
       name: fio
       state: present
   - name: Copy bellwether script to node
