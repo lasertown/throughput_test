@@ -40,9 +40,6 @@ ansible-playbook -i myazure_rm.yml sles_lab.yml
 ```console
 ansible-playbook -i myazure_rm.yml ubuntu_lab.yml
 ```  
-```console
-ansible-playbook -i myazure_rm.yml sles_lab.yml
-```  
 ### If you are running an RHEL image:
 ```console
 ansible-playbook -i myazure_rm.yml rhel_lab.yml
