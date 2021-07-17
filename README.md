@@ -113,6 +113,11 @@ Here are some examples found in /modules/node/variable.tf:
 # _version   = "latest"
 ################################
 # publisher = "Canonical"
+# offer = "0001-com-ubuntu-server-focal"
+# sku = "20_04-lts-gen2"
+# _version = "latest"
+################################
+# publisher = "Canonical"
 # offer     = "UbuntuServer"
 # sku       = "18_04-lts-gen2"
 # _version   = "latest"
