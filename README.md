@@ -63,14 +63,14 @@ module "node0" {
 }
 ```
 ### The resources will be created in a resource group specified in the root of the repo's main.tf.  
-```console
+```hcl
 module "rg0" {
   source = "./modules/resource_group"
   rg = "throughput_test"    #<-----------------THIS LINE TO CHANGE RESOURCE GROUP NAME
 }
 ```
 ### Changing the region
-```console
+```hcl
 module "network0" {
   source = "./modules/network"
   rg = module.rg0.rg 
@@ -83,7 +83,7 @@ module "network0" {
 # Deleting the environment
 ### The cluster can be deprovisioned by running:
 ```console
-$ terraform delete
+terraform delete
 ```  
 You can also simply delete the resource group the cluster is in.  If you manually delete the resource group, terraform will leave behind the files:
 1. terraform.tfstate
@@ -100,7 +100,7 @@ If you do not already have SSH keys setup in your home directory, they will be c
 
 ### OS Images
 Here are some examples found in /modules/node/variable.tf:
-```console
+```hcl
 ################################
 # publisher = "SUSE"
 # offer     = "sles-sap-15-sp2"
@@ -148,7 +148,7 @@ It will be created as a shared dashboard, but it can be easily manually changed 
 
 ### Running multiple versions of this test in parallel
 You can clone multiple instances of this project to create multiple VMs for testing. In addition to changing the resource group name, you would have to change the name of the Azure VM resource, which can be done by changing the tag name:
-```console
+```hcl
 module "node0" {
   source = "./modules/node"
   rg = module.rg0.rg
