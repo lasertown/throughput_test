@@ -73,7 +73,7 @@
       state: present
   - name: Enable prometheus
     command: sudo systemctl --now enable prometheus
-  - name: Start exporter
+  - name: Start prometheus
     command: sudo systemctl start prometheus
   - name: Install exporter
     zypper:
