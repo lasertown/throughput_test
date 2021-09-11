@@ -32,9 +32,3 @@ filename=/dev/sdg
 filename=/dev/sdh
 [job7]
 filename=/dev/sdi
-[job8]
-filename=/dev/sdj
-[job9]
-filename=/dev/sdk
-[job10]
-filename=/dev/sdl
