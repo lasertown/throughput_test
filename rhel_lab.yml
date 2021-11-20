@@ -6,6 +6,7 @@
     openssh_keypair:
       path: ~/.ssh/id_rsa
       force: False
+      regenerate: never
   - name: Terraform apply
     terraform:
       lock: no
