@@ -34,15 +34,15 @@ az login
 ## Clone the repository and run this command from root of project folder:
 ### If you are running a SLES image:
 ```console
-ansible-playbook -i myazure_rm.yml sles_lab.yml
+ansible-playbook -i hosts sles_lab.yml
 ```  
 ### If you are running an Ubuntu image:
 ```console
-ansible-playbook -i myazure_rm.yml ubuntu_lab.yml
+ansible-playbook -i hosts ubuntu_lab.yml
 ```  
 ### If you are running an RHEL image:
 ```console
-ansible-playbook -i myazure_rm.yml rhel_lab.yml
+ansible-playbook -i hosts rhel_lab.yml
 ```
 ### Changing the instance size or image
 The main.tf in the root of the repo calls the node module to create the nodes
