@@ -1,7 +1,6 @@
 [all:vars]
 ansible_ssh_private_key_file: "'~/.ssh/id_rsa'"
-ansible_user: "'azadmin'"
-ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
+ansible_ssh_common_args: '-i ~/.ssh/id_rsa -o ProxyCommand="ssh -W %h:%p -i ~/.ssh/id_rsa azureadmin@`terraform output -raw node_public_ip`"'
 
 [node]
 node0 ansible_host=10.0.0.10
