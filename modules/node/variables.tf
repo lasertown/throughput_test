@@ -23,12 +23,12 @@ variable "console" {
 }
 ################################
 # publisher = "SUSE"
-# offer     = "sles-sap-15-sp2"
+# offer     = "sles-15-sp3"
 # sku       = "gen2"
 # _version   = "latest"
 ################################
 # publisher = "SUSE"
-# offer     = "sles-sap-12-sp5"
+# offer     = "sles-12-sp5"
 # sku       = "gen2"
 # _version   = "latest"
 ################################
