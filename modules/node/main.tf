@@ -19,7 +19,8 @@ resource "azurerm_network_interface" "nic" {
     ip_configuration {
         name                          = "node-public"
         subnet_id                     = var.subnet
-        private_ip_address_allocation = "Dynamic"
+        private_ip_address_allocation = "Static"
+        private_ip_address            = "10.0.0.10"
         public_ip_address_id          = azurerm_public_ip.ip.id
         primary                       = "true"
     }
